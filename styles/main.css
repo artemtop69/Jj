@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light only; /* фиксируеи тему */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+body.light {
+    background-color: white;
+    color: black;
+}
+
+
+.text {
+    margin: 0px; /* отступы вокруг текста */
+    font-size: 15px; /* размер шрифта */
+    text-align: center; /* выравнивание по центру */
+}

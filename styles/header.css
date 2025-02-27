@@ -1,0 +1,83 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: relative; /* для позиционирования меню */
+}
+
+
+.logo {
+    font-size: 24px;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ff6347; /* цвет при наведении */
+}
+
+/* мбильное меню */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0px;
+}
+
+/* адаптивность */
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed; /* фиксированное положение */
+        top: 60px; /* позиция под шапкой */
+        right: -250px; /* скрыть меню за пределами экрана */
+        width: 250px; /* ширина меню */
+        background-color: #444; /* цвет фона меню */
+        transition: right 0.3s ease; /* плавный переход */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* тень для меню */
+        z-index: 1000;
+        height: 20vh;
+        overflow-y: auto; /* возможность прокрутки внутри меню */
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* вертикальная навигация */
+        padding: 10px; /* отступы внутри меню */
+        width: 100%; /* ширина списка равна ширине меню */
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px; /* отступ между пунктами меню */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
